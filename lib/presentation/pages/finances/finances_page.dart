@@ -1,4 +1,7 @@
+import 'package:dox_financeiro/domain/entities/finances_payment_card_entity.dart';
+import 'package:dox_financeiro/presentation/pages/finances/widgets/finances_graph_widget.dart';
 import 'package:dox_financeiro/presentation/pages/finances/widgets/finances_tabs/finances_tabs_widget.dart';
+import 'package:dox_financeiro/presentation/pages/finances/widgets/payments/finances_payment_card_widget.dart';
 import 'package:dox_financeiro/presentation/widgets/theme/dox_colors.dart';
 import 'package:dox_financeiro/presentation/widgets/theme/dox_sizing.dart';
 import 'package:dox_financeiro/presentation/widgets/theme/typograph.dart';
@@ -13,6 +16,14 @@ class FinancesPage extends StatefulWidget {
 
 class _FinancesPageState extends State<FinancesPage> {
   int _currentIndex = 0;
+  final mockData = FinancesPaymentCardEntity(
+    location: "Nome do Hospital",
+    description: "Atendimento em ala de Observação",
+    startTime: DateTime(2022, 10, 30, 12),
+    endTime: DateTime(2022, 10, 30, 18),
+    amount: 1280,
+    date: DateTime(2022, 10, 30),
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +43,22 @@ class _FinancesPageState extends State<FinancesPage> {
               }),
             ),
           ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                //TODO: maybe the padding has a pattern?
+                horizontal: 24,
+              ),
+              child: Column(
+                children: [
+                  const FinancesGraph(),
+                  FinancesPaymentCard(
+                    data: mockData,
+                  )
+                ],
+              ),
+            ),
+          )
         ],
       )),
     );
@@ -78,7 +105,7 @@ class DoxAppBar extends StatelessWidget implements PreferredSizeWidget {
             children: [
               AppBarActionButton(
                   child: LeftArrowIcon(
-                color: DoxColors.cyan,
+                color: DoxColors.primary,
                 onTap: onBackTap,
               )),
               const Expanded(child: DoxAppBarTitleWithDrawer()),
@@ -107,7 +134,7 @@ class DoxAppBarTitleWithDrawer extends StatelessWidget {
         ),
         AppBarActionButton(
           child: const SortIcon(
-            color: DoxColors.cyan,
+            color: DoxColors.primary,
           ),
           onTap: () {
             //TODO: open drawer

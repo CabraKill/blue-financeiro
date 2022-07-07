@@ -19,7 +19,7 @@ class FinancesTabText extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          color: activated ? DoxColors.cyan : DoxColors.notW,
+          color: activated ? DoxColors.primary : DoxColors.notW,
           borderRadius: BorderRadius.circular(43),
         ),
         padding:
