@@ -33,9 +33,49 @@ class _FinancesPageState extends State<FinancesPage> {
         },
       ),
       body: TertiaryBackground(
-          child: Column(
+          child: 
+          //TODO: make it more granular
+          Stack(
         children: [
+          Container(
+            margin: const EdgeInsets.only(top: 21),
+            decoration: const BoxDecoration(
+              color: DoxColors.notW,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
+              ),
+            ),
+            padding: const EdgeInsets.only(
+                //TODO: maybe the padding has a pattern?
+                left: 24,
+                right: 24,
+                top: 32),
+            child: Column(
+              children: [
+                const FinancesGraph(),
+                const SizedBox(height: 20),
+                Expanded(
+                  child: ListView.builder(
+                    //TODO: get this value from controller
+                    itemCount: 10,
+                    itemBuilder: (context, index) => Padding(
+                      padding:
+                          //TODO: get this conditional value from controller
+                          EdgeInsets.only(bottom: index == 10 - 1 ? 20 : 10),
+                      child: FinancesPaymentCard(
+                        data: mockData,
+                      ),
+                    ),
+                  ),
+                ),
+                //top padding
+                const SizedBox(height: 20),
+              ],
+            ),
+          ),
           Align(
+            alignment: Alignment.topCenter,
             child: FinancesTabs(
               currentIndex: _currentIndex,
               onTabTap: (index) => setState(() {
@@ -43,22 +83,6 @@ class _FinancesPageState extends State<FinancesPage> {
               }),
             ),
           ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                //TODO: maybe the padding has a pattern?
-                horizontal: 24,
-              ),
-              child: Column(
-                children: [
-                  const FinancesGraph(),
-                  FinancesPaymentCard(
-                    data: mockData,
-                  )
-                ],
-              ),
-            ),
-          )
         ],
       )),
     );
