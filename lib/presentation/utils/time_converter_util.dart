@@ -14,4 +14,24 @@ class TimeConverter {
     final year = dateTime.year;
     return '$day/$month/$year';
   }
+
+  static String getMonthWith3LettersFromDateTime(DateTime dateTime) {
+    final month = dateTime.month;
+    return _monthWith3LettersList[month-1];
+  }
+
+  static const _monthWith3LettersList = <String>[
+    'Jan',
+    'Fev',
+    'Mar',
+    'Abr',
+    'Mai',
+    'Jun',
+    'Jul',
+    'Ago',
+    'Set',
+    'Out',
+    'Nov',
+    'Dez',
+  ];
 }

@@ -9,4 +9,6 @@ class DoxColors {
   static const Color nonSelected = Color(0xFF70777E);
   static const Color green = Color(0xFF00AB84);
   static const Color orange = Color(0xFFFD5A33);
+  static const Color black34 = Color(0xFF343434);
+  static const Color dashedLineColor = Color(0xFFEBECF1);
 }

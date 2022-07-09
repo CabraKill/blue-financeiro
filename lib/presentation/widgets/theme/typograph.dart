@@ -63,4 +63,17 @@ class DoxTypograph {
         fontWeight: FontWeight.w600,
         color: Colors.black,
       );
+
+  static TextStyle get cellTitle => const TextStyle(
+        fontFamily: 'Montserrat',
+        fontSize: 16,
+        fontWeight: FontWeight.w700,
+        color: DoxColors.black34,
+      );
+
+  static TextStyle get fiancesGraphValue => const TextStyle(
+        fontFamily: 'Poppins',
+        fontSize: 32,
+        fontWeight: FontWeight.w500,
+      );
 }

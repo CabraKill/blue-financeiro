@@ -1,5 +1,6 @@
-import 'package:dox_financeiro/domain/entities/finances_payment_card_entity.dart';
-import 'package:dox_financeiro/presentation/pages/finances/widgets/finances_graph_widget.dart';
+import 'package:dox_financeiro/domain/entities/finances/finances_payment_card_entity.dart';
+import 'package:dox_financeiro/presentation/mock_data/finances/finances_graph_mock.dart';
+import 'package:dox_financeiro/presentation/pages/finances/widgets/payments/finances_graph_tile_widget.dart';
 import 'package:dox_financeiro/presentation/pages/finances/widgets/hours/hours_bottom_bar_widget.dart';
 import 'package:dox_financeiro/presentation/pages/finances/widgets/payments/finances_payment_card_widget.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,9 @@ class FinancesReceivedView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const FinancesGraph(),
+        FinancesGraphTile(
+          graphData: FinancesGraphMockData.graphMockData,
+        ),
         const SizedBox(height: 20),
         Expanded(
           child: ListView.builder(
@@ -32,7 +35,7 @@ class FinancesReceivedView extends StatelessWidget {
               padding:
                   //TODO: get this conditional value from controller
                   EdgeInsets.only(bottom: index == _listLength - 1 ? 20 : 10),
-              child: FinancesPaymentCard(
+              child: FinancesPaymentCard.received(
                 data: _mockData,
               ),
             ),

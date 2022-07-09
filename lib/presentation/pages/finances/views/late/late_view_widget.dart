@@ -1,5 +1,4 @@
-import 'package:dox_financeiro/domain/entities/finances_payment_card_entity.dart';
-import 'package:dox_financeiro/presentation/pages/finances/widgets/finances_graph_widget.dart';
+import 'package:dox_financeiro/domain/entities/finances/finances_payment_card_entity.dart';
 import 'package:dox_financeiro/presentation/pages/finances/widgets/hours/hours_bottom_bar_widget.dart';
 import 'package:dox_financeiro/presentation/pages/finances/widgets/payments/finances_payment_card_widget.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +29,7 @@ class FinancesLateView extends StatelessWidget {
               padding:
                   //TODO: get this conditional value from controller
                   EdgeInsets.only(bottom: index == _listLength - 1 ? 20 : 10),
-              child: FinancesPaymentCard(
+              child: FinancesPaymentCard.late(
                 data: _mockData,
               ),
             ),

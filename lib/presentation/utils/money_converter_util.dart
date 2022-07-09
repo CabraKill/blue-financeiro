@@ -1,5 +1,5 @@
 //TODO: make test cases
-class MoneyConverterUtil {
+class MoneyConverter {
   static String convertToSimpleMoney(double value) {
     return 'R\$${value.toStringAsFixed(0)}';
   }

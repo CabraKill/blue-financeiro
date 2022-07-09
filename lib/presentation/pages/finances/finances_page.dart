@@ -1,11 +1,7 @@
-import 'package:dox_financeiro/domain/entities/finances_payment_card_entity.dart';
 import 'package:dox_financeiro/presentation/pages/finances/views/late/late_view_widget.dart';
 import 'package:dox_financeiro/presentation/pages/finances/views/received/received_view_widget.dart';
 import 'package:dox_financeiro/presentation/pages/finances/views/toReceive/to_receive_view_widget.dart';
-import 'package:dox_financeiro/presentation/pages/finances/widgets/finances_graph_widget.dart';
 import 'package:dox_financeiro/presentation/pages/finances/widgets/finances_tabs/finances_tabs_widget.dart';
-import 'package:dox_financeiro/presentation/pages/finances/widgets/hours/hours_bottom_bar_widget.dart';
-import 'package:dox_financeiro/presentation/pages/finances/widgets/payments/finances_payment_card_widget.dart';
 import 'package:dox_financeiro/presentation/widgets/theme/dox_colors.dart';
 import 'package:dox_financeiro/presentation/widgets/theme/dox_sizing.dart';
 import 'package:dox_financeiro/presentation/widgets/theme/typograph.dart';

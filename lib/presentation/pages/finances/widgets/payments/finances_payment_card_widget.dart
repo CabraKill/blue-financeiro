@@ -1,4 +1,4 @@
-import 'package:dox_financeiro/domain/entities/finances_payment_card_entity.dart';
+import 'package:dox_financeiro/domain/entities/finances/finances_payment_card_entity.dart';
 import 'package:dox_financeiro/presentation/utils/money_converter_util.dart';
 import 'package:dox_financeiro/presentation/utils/time_converter_util.dart';
 import 'package:dox_financeiro/presentation/widgets/right_circle_widget.dart';
@@ -8,10 +8,30 @@ import 'package:flutter/material.dart';
 
 class FinancesPaymentCard extends StatelessWidget {
   final FinancesPaymentCardEntity data;
+  final Color color;
   const FinancesPaymentCard({
     required this.data,
+    required this.color,
     Key? key,
   }) : super(key: key);
+
+  const FinancesPaymentCard.received({
+    required this.data,
+    Key? key,
+  })  : color = DoxColors.primary,
+        super(key: key);
+
+  const FinancesPaymentCard.toReceive({
+    required this.data,
+    Key? key,
+  })  : color = DoxColors.green,
+        super(key: key);
+
+  const FinancesPaymentCard.late({
+    required this.data,
+    Key? key,
+  })  : color = DoxColors.orange,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +39,7 @@ class FinancesPaymentCard extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           color: Colors.white,
-          boxShadow: [
+          boxShadow: const [
             //TODO: add shadows
           ]),
       padding: const EdgeInsets.symmetric(
@@ -35,7 +55,9 @@ class FinancesPaymentCard extends StatelessWidget {
               children: [
                 Text(
                   data.location,
-                  style: DoxTypograph.title3,
+                  style: DoxTypograph.title3.copyWith(
+                    color: color,
+                  ),
                 ),
                 const SizedBox(height: 10),
                 FractionallySizedBox(
@@ -80,7 +102,7 @@ class FinancesPaymentCard extends StatelessWidget {
                     height: 40,
                     alignment: Alignment.center,
                     child: RighCircle(
-                      color: DoxColors.primary.withOpacity(0.2),
+                      color: color.withOpacity(0.2),
                     ),
                   )
                 ],
@@ -97,9 +119,9 @@ class FinancesPaymentCard extends StatelessWidget {
                   ),
                   const SizedBox(width: 8),
                   Text(
-                    MoneyConverterUtil.convertToSimpleMoney(data.amount),
+                    MoneyConverter.convertToSimpleMoney(data.amount),
                     style: DoxTypograph.caption1.copyWith(
-                      color: DoxColors.primary,
+                      color: color,
                     ),
                   ),
                 ],

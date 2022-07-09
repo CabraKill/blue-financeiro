@@ -76,7 +76,7 @@ class HoursBottomBar extends StatelessWidget {
         ),
         const SizedBox(width: 4),
         Text(
-          MoneyConverterUtil.convertToMoneyWith2(moneyAmount),
+          MoneyConverter.convertToMoneyWith2(moneyAmount),
           style: DoxTypograph.timeMoneyValue,
         ),
         const SizedBox(width: 20),
