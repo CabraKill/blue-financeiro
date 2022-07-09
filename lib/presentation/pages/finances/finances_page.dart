@@ -1,6 +1,10 @@
 import 'package:dox_financeiro/domain/entities/finances_payment_card_entity.dart';
+import 'package:dox_financeiro/presentation/pages/finances/views/late/late_view_widget.dart';
+import 'package:dox_financeiro/presentation/pages/finances/views/received/received_view_widget.dart';
+import 'package:dox_financeiro/presentation/pages/finances/views/toReceive/to_receive_view_widget.dart';
 import 'package:dox_financeiro/presentation/pages/finances/widgets/finances_graph_widget.dart';
 import 'package:dox_financeiro/presentation/pages/finances/widgets/finances_tabs/finances_tabs_widget.dart';
+import 'package:dox_financeiro/presentation/pages/finances/widgets/hours/hours_bottom_bar_widget.dart';
 import 'package:dox_financeiro/presentation/pages/finances/widgets/payments/finances_payment_card_widget.dart';
 import 'package:dox_financeiro/presentation/widgets/theme/dox_colors.dart';
 import 'package:dox_financeiro/presentation/widgets/theme/dox_sizing.dart';
@@ -16,14 +20,7 @@ class FinancesPage extends StatefulWidget {
 
 class _FinancesPageState extends State<FinancesPage> {
   int _currentIndex = 0;
-  final mockData = FinancesPaymentCardEntity(
-    location: "Nome do Hospital",
-    description: "Atendimento em ala de Observação",
-    startTime: DateTime(2022, 10, 30, 12),
-    endTime: DateTime(2022, 10, 30, 18),
-    amount: 1280,
-    date: DateTime(2022, 10, 30),
-  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,9 +30,9 @@ class _FinancesPageState extends State<FinancesPage> {
         },
       ),
       body: TertiaryBackground(
-          child: 
-          //TODO: make it more granular
-          Stack(
+          child:
+              //TODO: make it more granular
+              Stack(
         children: [
           Container(
             margin: const EdgeInsets.only(top: 21),
@@ -51,28 +48,15 @@ class _FinancesPageState extends State<FinancesPage> {
                 left: 24,
                 right: 24,
                 top: 32),
-            child: Column(
-              children: [
-                const FinancesGraph(),
-                const SizedBox(height: 20),
-                Expanded(
-                  child: ListView.builder(
-                    //TODO: get this value from controller
-                    itemCount: 10,
-                    itemBuilder: (context, index) => Padding(
-                      padding:
-                          //TODO: get this conditional value from controller
-                          EdgeInsets.only(bottom: index == 10 - 1 ? 20 : 10),
-                      child: FinancesPaymentCard(
-                        data: mockData,
-                      ),
-                    ),
-                  ),
-                ),
-                //top padding
-                const SizedBox(height: 20),
-              ],
-            ),
+            child: Builder(builder: (context) {
+              if (_currentIndex == 0) {
+                return const FinancesReceivedView();
+              } else if (_currentIndex == 1) {
+                return const FinancesToReceiveView();
+              } else {
+                return const FinancesLateView();
+              }
+            }),
           ),
           Align(
             alignment: Alignment.topCenter,

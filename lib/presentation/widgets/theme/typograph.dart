@@ -1,5 +1,5 @@
 import 'package:dox_financeiro/presentation/widgets/theme/dox_colors.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class DoxTypograph {
   static TextStyle get appBarTitle => const TextStyle(
@@ -42,11 +42,25 @@ class DoxTypograph {
         fontSize: 12,
         fontWeight: FontWeight.w600,
       );
-  
+
   static TextStyle get caption2 => const TextStyle(
         fontFamily: 'Poppins',
         fontSize: 12,
         fontWeight: FontWeight.w500,
         color: DoxColors.nonSelected,
+      );
+
+  static TextStyle get timeMoneyTitle => const TextStyle(
+        fontFamily: 'Montserrat',
+        fontSize: 15,
+        fontWeight: FontWeight.w400,
+        color: Colors.black,
+      );
+
+  static TextStyle get timeMoneyValue => const TextStyle(
+        fontFamily: 'Montserrat',
+        fontSize: 15,
+        fontWeight: FontWeight.w600,
+        color: Colors.black,
       );
 }
