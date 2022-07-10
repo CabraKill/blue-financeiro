@@ -65,7 +65,7 @@ class _FinancesGraphTileState extends State<FinancesGraphTile> {
                 Text(
                   _currentData != null
                       ? MoneyConverter.convertToMoneyWith2(
-                          _currentData!.received)
+                          _currentData!.data.received)
                       : '----',
                   style: DoxTypograph.fiancesGraphValue.copyWith(
                     color: DoxColors.primary,
@@ -81,6 +81,7 @@ class _FinancesGraphTileState extends State<FinancesGraphTile> {
                 aspectRatio: 295 / 159,
                 child: FinancesGraphWidget(
                   dataList: widget.graphData.data,
+                  currentMonthIndex: 3,
                 ),
               )),
             ),

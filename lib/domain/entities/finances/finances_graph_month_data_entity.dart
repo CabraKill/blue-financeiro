@@ -1,13 +1,11 @@
+import 'package:dox_financeiro/domain/entities/finances/finances_graph_data_entity.dart';
+
 class FinancesGraphMonthDataEntity {
   final DateTime date;
-  final double received;
-  final double toReceive;
-  final double late;
+  final FinancesGraphDataEntity data;
 
   FinancesGraphMonthDataEntity({
+    required this.data,
     required this.date,
-    required this.received,
-    required this.toReceive,
-    required this.late,
   });
 }
