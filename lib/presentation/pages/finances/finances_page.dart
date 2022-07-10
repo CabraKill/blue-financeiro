@@ -2,9 +2,10 @@ import 'package:dox_financeiro/presentation/pages/finances/views/late/late_view_
 import 'package:dox_financeiro/presentation/pages/finances/views/received/received_view_widget.dart';
 import 'package:dox_financeiro/presentation/pages/finances/views/toReceive/to_receive_view_widget.dart';
 import 'package:dox_financeiro/presentation/pages/finances/widgets/finances_tabs/finances_tabs_widget.dart';
-import 'package:dox_financeiro/presentation/widgets/theme/dox_colors.dart';
-import 'package:dox_financeiro/presentation/widgets/theme/dox_sizing.dart';
-import 'package:dox_financeiro/presentation/widgets/theme/typograph.dart';
+import 'package:dox_financeiro/presentation/widgets/appBar/secundary_app_bar.dart';
+import 'package:dox_financeiro/presentation/widgets/cards/dox_background_widget.dart';
+import 'package:dox_financeiro/presentation/widgets/cards/dox_body_card_widget.dart';
+import 'package:dox_financeiro/presentation/widgets/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class FinancesPage extends StatefulWidget {
@@ -21,29 +22,18 @@ class _FinancesPageState extends State<FinancesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: DoxAppBar(
+        //TODO: check if should be i18n
+        title: "Financeiro",
         onBackTap: () {
           //TODO: ex: pop page here, check if can pop or call controller
         },
       ),
-      body: TertiaryBackground(
+      body: DoxBackground(
           child:
               //TODO: make it more granular
               Stack(
         children: [
-          Container(
-            margin: const EdgeInsets.only(top: 21),
-            decoration: const BoxDecoration(
-              color: DoxColors.notW,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30),
-                topRight: Radius.circular(30),
-              ),
-            ),
-            padding: const EdgeInsets.only(
-                //TODO: maybe the padding has a pattern?
-                left: 24,
-                right: 24,
-                top: 32),
+          DoxBodyCard(
             child: Builder(builder: (context) {
               if (_currentIndex == 0) {
                 return const FinancesReceivedView();
@@ -65,110 +55,6 @@ class _FinancesPageState extends State<FinancesPage> {
           ),
         ],
       )),
-    );
-  }
-}
-
-class TertiaryBackground extends StatelessWidget {
-  final Widget child;
-  const TertiaryBackground({
-    required this.child,
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: DoxColors.tertiary,
-      child: child,
-    );
-  }
-}
-
-class DoxAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final double height;
-  final VoidCallback? onBackTap;
-  const DoxAppBar({
-    this.onBackTap,
-    this.height = 64,
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return PreferredSize(
-      preferredSize: preferredSize,
-      child: Container(
-        decoration: const BoxDecoration(color: DoxColors.tertiary),
-        padding: const EdgeInsets.symmetric(
-          vertical: 10,
-          horizontal: 24,
-        ),
-        child: SafeArea(
-          child: Row(
-            children: [
-              AppBarActionButton(
-                  child: LeftArrowIcon(
-                color: DoxColors.primary,
-                onTap: onBackTap,
-              )),
-              const Expanded(child: DoxAppBarTitleWithDrawer()),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  @override
-  Size get preferredSize => Size.fromHeight(height);
-}
-
-class DoxAppBarTitleWithDrawer extends StatelessWidget {
-  const DoxAppBarTitleWithDrawer({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: Container(
-              alignment: Alignment.center,
-              child: Text("Financeiro", style: DoxTypograph.appBarTitle)),
-        ),
-        AppBarActionButton(
-          child: const SortIcon(
-            color: DoxColors.primary,
-          ),
-          onTap: () {
-            //TODO: open drawer
-          },
-        ),
-      ],
-    );
-  }
-}
-
-class AppBarActionButton extends StatelessWidget {
-  final Widget child;
-  final VoidCallback? onTap;
-  const AppBarActionButton({
-    required this.child,
-    this.onTap,
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: SizedBox.square(
-        dimension: DoxSizing.hug,
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: child,
-        ),
-      ),
     );
   }
 }

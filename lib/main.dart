@@ -6,7 +6,7 @@ import 'presentation/routes/route_paths.dart';
 void main() {
   runApp(MaterialApp(
     routes: RouteService.routes,
-    initialRoute: RoutePaths.finances,
+    initialRoute: RoutePaths.profile,
     debugShowCheckedModeBanner: false,
   ));
 }

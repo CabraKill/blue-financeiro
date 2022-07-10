@@ -1,4 +1,4 @@
-import 'package:dox_financeiro/presentation/widgets/theme/dox_colors.dart';
+import 'package:dox_financeiro/presentation/widgets/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class ContinuosLine extends StatelessWidget {

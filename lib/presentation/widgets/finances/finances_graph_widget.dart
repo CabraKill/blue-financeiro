@@ -3,7 +3,7 @@ import 'package:dox_financeiro/presentation/utils/time_converter_util.dart';
 import 'package:dox_financeiro/presentation/widgets/finances/continuos_line_widget.dart';
 import 'package:dox_financeiro/presentation/widgets/finances/dashed_line_widget.dart';
 import 'package:dox_financeiro/presentation/widgets/finances/finances_vertical_graph_bar_widget.dart';
-import 'package:dox_financeiro/presentation/widgets/theme/dox_colors.dart';
+import 'package:dox_financeiro/presentation/widgets/theme/colors.dart';
 import 'package:dox_financeiro/presentation/widgets/theme/typograph.dart';
 import 'package:flutter/material.dart';
 

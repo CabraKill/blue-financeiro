@@ -2,7 +2,7 @@ import 'package:dox_financeiro/domain/entities/finances/finances_payment_card_en
 import 'package:dox_financeiro/presentation/utils/money_converter_util.dart';
 import 'package:dox_financeiro/presentation/utils/time_converter_util.dart';
 import 'package:dox_financeiro/presentation/widgets/right_circle_widget.dart';
-import 'package:dox_financeiro/presentation/widgets/theme/dox_colors.dart';
+import 'package:dox_financeiro/presentation/widgets/theme/colors.dart';
 import 'package:dox_financeiro/presentation/widgets/theme/typograph.dart';
 import 'package:flutter/material.dart';
 

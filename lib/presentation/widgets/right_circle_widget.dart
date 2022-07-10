@@ -24,7 +24,7 @@ class RighCircle extends StatelessWidget {
       ),
       alignment: Alignment.center,
       child: SvgPicture.asset(
-        IconAssets.arrowRight,
+        DoxIconAssets.arrowRight,
         height: _iconSize,
       ),
     );

@@ -1,4 +1,4 @@
-import 'package:dox_financeiro/presentation/widgets/theme/dox_colors.dart';
+import 'package:dox_financeiro/presentation/widgets/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class DoxTypograph {
@@ -75,5 +75,11 @@ class DoxTypograph {
         fontFamily: 'Poppins',
         fontSize: 32,
         fontWeight: FontWeight.w500,
+      );
+
+  static TextStyle get tabTitleCard => const TextStyle(
+        fontFamily: 'Montserrat',
+        fontSize: 10,
+        fontWeight: FontWeight.w600,
       );
 }

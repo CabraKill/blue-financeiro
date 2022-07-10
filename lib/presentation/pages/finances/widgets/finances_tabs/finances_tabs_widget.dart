@@ -1,6 +1,6 @@
 import 'package:dox_financeiro/domain/types/tab_tap_type.dart';
 import 'package:dox_financeiro/presentation/pages/finances/widgets/finances_tabs/finances_tabs_text_widget.dart';
-import 'package:dox_financeiro/presentation/widgets/theme/dox_colors.dart';
+import 'package:dox_financeiro/presentation/widgets/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class FinancesTabs extends StatelessWidget {
