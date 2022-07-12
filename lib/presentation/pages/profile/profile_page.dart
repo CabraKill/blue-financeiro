@@ -38,7 +38,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        const SizedBox(height: 6),
+                        const SizedBox(height: 16),
                         ProfileInfoCard(
                           profileInfo: ProfileInfoCardMock.card,
                         ),
