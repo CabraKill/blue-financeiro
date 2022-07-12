@@ -13,8 +13,6 @@ final _mockData = FinancesPaymentCardEntity(
 );
 
 class FinancesToReceiveView extends StatelessWidget {
-  //TODO: receive the value for list
-  //TODO: receive the value for the graph
   const FinancesToReceiveView({Key? key}) : super(key: key);
   static const int _listLength = 6;
   @override

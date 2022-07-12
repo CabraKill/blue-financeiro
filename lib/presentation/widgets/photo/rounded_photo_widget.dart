@@ -22,7 +22,6 @@ class RoundedPhoto extends StatelessWidget {
         ],
       ),
       padding: const EdgeInsets.all(3.0),
-      //TODO: add shadow
       width: _containerSize,
       height: _containerSize,
       child: ClipOval(

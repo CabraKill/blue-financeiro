@@ -13,8 +13,6 @@ final _mockData = FinancesPaymentCardEntity(
 );
 
 class FinancesLateView extends StatelessWidget {
-  //TODO: receive the value for list
-  //TODO: receive the value for the graph
   const FinancesLateView({Key? key}) : super(key: key);
   static const int _listLength = 3;
   @override

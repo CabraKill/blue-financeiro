@@ -83,8 +83,6 @@ class LeftArrowIcon extends DoxIconButton {
 
   @override
   Widget body(BuildContext context) {
-    //TODO: should have an exported icon.
-    //Material has it's own inner spacing
     return SizedBox(
       width: 14,
       height: 24,

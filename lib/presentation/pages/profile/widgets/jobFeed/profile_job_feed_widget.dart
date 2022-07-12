@@ -45,7 +45,7 @@ class ProfileJobFeed extends StatelessWidget {
               },
             ),
           ),
-          SizedBox(height: 11),
+          const SizedBox(height: 11),
           Container(
             width: double.infinity,
             height: 1,

@@ -1,5 +1,5 @@
-//TODO: make test cases
 class TimeConverter {
+  TimeConverter._();
   static String getTimeFormattedFromDateTime(DateTime dateTime) {
     return '${dateTime.hour}:${dateTime.minute.toString().padLeft(2, '0')}';
   }
@@ -17,7 +17,7 @@ class TimeConverter {
 
   static String getMonthWith3LettersFromDateTime(DateTime dateTime) {
     final month = dateTime.month;
-    return _monthWith3LettersList[month-1];
+    return _monthWith3LettersList[month - 1];
   }
 
   static const _monthWith3LettersList = <String>[

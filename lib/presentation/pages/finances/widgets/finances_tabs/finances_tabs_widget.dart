@@ -21,7 +21,6 @@ class FinancesTabs extends StatelessWidget {
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        //TODO: analyse if it children generation should be dynamic
         children: [
           FinancesTabText(
             text: 'Recebidos',

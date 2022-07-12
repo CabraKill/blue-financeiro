@@ -36,7 +36,6 @@ class ProfileInfoCard extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          //TODO: put into a widget
           Row(children: [
             RoundedPhoto(
               url: profileInfo.photoUrl,

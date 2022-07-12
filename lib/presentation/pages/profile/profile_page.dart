@@ -23,7 +23,6 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //TODO: check if should be i18n
       appBar: const DoxAppBar(
         title: "Meu Perfil",
       ),

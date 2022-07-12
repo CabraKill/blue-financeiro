@@ -6,8 +6,6 @@ import 'package:dox_financeiro/presentation/widgets/theme/colors.dart';
 import 'package:dox_financeiro/presentation/widgets/theme/typograph.dart';
 import 'package:flutter/material.dart';
 
-//TODO: check if it is necessary to be statefull
-//TODO: show whe different states of this widget in the showcase
 class FinancesGraphTile extends StatefulWidget {
   final FinancesGraphEntity graphData;
   const FinancesGraphTile({
@@ -22,7 +20,7 @@ class FinancesGraphTile extends StatefulWidget {
 class _FinancesGraphTileState extends State<FinancesGraphTile> {
   FinancesGraphMonthDataEntity? _currentData;
 
-  //TODO: change to block
+  //TODO: change to receive from an api call  @override
   @override
   void initState() {
     super.initState();

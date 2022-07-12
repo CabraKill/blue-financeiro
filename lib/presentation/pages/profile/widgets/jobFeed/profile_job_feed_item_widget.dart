@@ -47,34 +47,37 @@ class ProfileJobFeedItem extends StatelessWidget {
                       ),
                       const SizedBox(width: 10),
                       Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Flexible(
-                              child: Text(
-                                jobFeedItem.title,
-                                style: DoxTypograph.profileJobFeedItemHeader,
+                        child: SingleChildScrollView(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  jobFeedItem.title,
+                                  style: DoxTypograph.profileJobFeedItemHeader,
+                                ),
                               ),
-                            ),
-                            const SizedBox(height: _itemVerticalSpacing),
-                            Flexible(
-                              child: Text(
-                                jobFeedItem.briefDescription,
-                                style:
-                                    DoxTypograph.profileJobFeedItemDescription,
+                              const SizedBox(height: _itemVerticalSpacing),
+                              Flexible(
+                                child: Text(
+                                  jobFeedItem.briefDescription,
+                                  style:
+                                      DoxTypograph.profileJobFeedItemDescription,
+                                ),
                               ),
-                            ),
-                            const SizedBox(height: _itemVerticalSpacing),
-                            ProfileJobFeedItemTextWithIcon(
-                              icon: SvgPicture.asset(DoxIconAssets.location),
-                              text: _location,
-                            ),
-                            const SizedBox(height: _itemVerticalSpacing),
-                            ProfileJobFeedItemTextWithIcon(
-                              icon: SvgPicture.asset(DoxIconAssets.call),
-                              text: jobFeedItem.telefone,
-                            ),
-                          ],
+                              const SizedBox(height: _itemVerticalSpacing),
+                              ProfileJobFeedItemTextWithIcon(
+                                icon: SvgPicture.asset(DoxIconAssets.location),
+                                text: _location,
+                              ),
+                              const SizedBox(height: _itemVerticalSpacing),
+                              ProfileJobFeedItemTextWithIcon(
+                                icon: SvgPicture.asset(DoxIconAssets.call),
+                                text: jobFeedItem.telefone,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                       const SizedBox(width: 20),

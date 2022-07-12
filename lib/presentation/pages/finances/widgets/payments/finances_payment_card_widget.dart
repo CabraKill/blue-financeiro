@@ -37,11 +37,9 @@ class FinancesPaymentCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          color: Colors.white,
-          boxShadow: const [
-            //TODO: add shadows
-          ]),
+        borderRadius: BorderRadius.circular(15),
+        color: Colors.white,
+      ),
       padding: const EdgeInsets.symmetric(
         horizontal: 9,
         vertical: 4,

@@ -5,8 +5,6 @@ import 'package:dox_financeiro/presentation/widgets/theme/typograph.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
-//TODO: maybe use an entity here
-//TODO: change name
 class HoursBottomBar extends StatelessWidget {
   final int timeAmount;
   final double moneyAmount;
