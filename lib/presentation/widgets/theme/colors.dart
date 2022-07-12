@@ -18,4 +18,5 @@ class DoxColors {
   static const Color boxShadow = Color(0x1ECAD314);
   static const Color profileInfo = Color(0xFF6B779A);
   static const Color jobFeedItemBackground = Color(0xFF1ECAD3);
+  static const Color documentDetails = Color(0xFF666666);
 }

@@ -10,4 +10,8 @@ class RouteService {
       RoutePaths.finances: (context) => const FinancesPage(),
     };
   }
+
+  static void goToFinances(BuildContext context) {
+    Navigator.pushNamed(context, RoutePaths.finances);
+  }
 }

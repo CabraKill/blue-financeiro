@@ -95,7 +95,7 @@ class DoxTypograph {
         fontSize: 12,
         fontWeight: FontWeight.w500,
       );
-  
+
   static TextStyle get buttonText => const TextStyle(
         fontFamily: 'Montserrat',
         fontSize: 15,
@@ -106,5 +106,29 @@ class DoxTypograph {
         fontFamily: 'Montserrat',
         fontSize: 15,
         fontWeight: FontWeight.w600,
+      );
+
+  static TextStyle get profileJobFeedItemHeader => const TextStyle(
+        fontFamily: 'Montserrat',
+        fontSize: 16,
+        fontWeight: FontWeight.w900,
+      );
+
+  static TextStyle get profileJobFeedItemDescription => const TextStyle(
+        fontFamily: 'Montserrat',
+        fontSize: 12,
+        fontWeight: FontWeight.w500,
+      );
+
+  static TextStyle get profileJobFeedItemTextWithIcon => const TextStyle(
+        fontFamily: 'Montserrat',
+        fontSize: 10,
+        fontWeight: FontWeight.w500,
+      );
+
+  static TextStyle get documentDetails => const TextStyle(
+        fontFamily: 'Roboto',
+        fontSize: 10,
+        fontWeight: FontWeight.w300,
       );
 }

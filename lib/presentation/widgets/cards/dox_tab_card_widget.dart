@@ -5,9 +5,11 @@ import 'package:flutter/material.dart';
 class DoxTabCard extends StatelessWidget {
   final String title;
   final Widget icon;
+  final VoidCallback? onTap;
   const DoxTabCard({
     required this.title,
     required this.icon,
+    this.onTap,
     Key? key,
   }) : super(key: key);
   static const double _iconBoxSize = 30;
@@ -17,35 +19,38 @@ class DoxTabCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(_containerMargin),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        color: DoxColors.primary,
-      ),
-      padding: const EdgeInsets.all(_containerInternalPadding),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: _iconBoxSize,
-            height: _iconBoxSize,
-            alignment: Alignment.center,
-            child: icon,
-          ),
-          Container(
-            constraints: const BoxConstraints(
-              minWidth: _minimaltextContainerWidth,
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        margin: const EdgeInsets.all(_containerMargin),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          color: DoxColors.primary,
+        ),
+        padding: const EdgeInsets.all(_containerInternalPadding),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: _iconBoxSize,
+              height: _iconBoxSize,
+              alignment: Alignment.center,
+              child: icon,
             ),
-            child: Text(
-              title,
-              style: DoxTypograph.tabTitleCard.copyWith(
-                color: DoxColors.tertiary,
+            Container(
+              constraints: const BoxConstraints(
+                minWidth: _minimaltextContainerWidth,
+              ),
+              child: Text(
+                title,
+                style: DoxTypograph.tabTitleCard.copyWith(
+                  color: DoxColors.tertiary,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

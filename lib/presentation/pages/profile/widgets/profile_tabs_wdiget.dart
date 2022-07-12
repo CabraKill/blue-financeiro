@@ -1,3 +1,4 @@
+import 'package:dox_financeiro/presentation/routes/route_service.dart';
 import 'package:dox_financeiro/presentation/widgets/cards/dox_tab_card_widget.dart';
 import 'package:dox_financeiro/presentation/widgets/icon_assets.dart';
 import 'package:dox_financeiro/presentation/widgets/theme/colors.dart';
@@ -23,6 +24,7 @@ class ProfileTabs extends StatelessWidget {
               DoxIconAssets.moneySimbol,
               color: DoxColors.tertiary,
             ),
+            onTap: () => RouteService.goToFinances(context),
           ),
           DoxTabCard(
             title: 'Estatísticas',

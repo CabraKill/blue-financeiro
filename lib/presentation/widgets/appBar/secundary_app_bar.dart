@@ -28,10 +28,11 @@ class DoxAppBar extends StatelessWidget implements PreferredSizeWidget {
           child: Row(
             children: [
               AppBarActionButton(
-                  child: LeftArrowIcon(
-                color: DoxColors.primary,
+                child: LeftArrowIcon(
+                  color: DoxColors.primary,
+                ),
                 onTap: onBackTap,
-              )),
+              ),
               Expanded(
                   child: DoxAppBarTitleWithDrawer(
                 title: title,

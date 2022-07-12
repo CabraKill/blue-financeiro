@@ -1,5 +1,5 @@
 import 'package:dox_financeiro/domain/entities/finances/profile_info_entity.dart';
-import 'package:dox_financeiro/presentation/pages/profile/widgets/profile_info_text_with_icon_widget.dart';
+import 'package:dox_financeiro/presentation/pages/profile/widgets/info/profile_info_text_with_icon_widget.dart';
 import 'package:dox_financeiro/presentation/utils/time_converter_util.dart';
 import 'package:dox_financeiro/presentation/widgets/icon_assets.dart';
 import 'package:dox_financeiro/presentation/widgets/theme/typograph.dart';

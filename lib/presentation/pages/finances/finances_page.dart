@@ -5,7 +5,6 @@ import 'package:dox_financeiro/presentation/pages/finances/widgets/finances_tabs
 import 'package:dox_financeiro/presentation/widgets/appBar/secundary_app_bar.dart';
 import 'package:dox_financeiro/presentation/widgets/cards/dox_background_widget.dart';
 import 'package:dox_financeiro/presentation/widgets/cards/dox_body_card_widget.dart';
-import 'package:dox_financeiro/presentation/widgets/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class FinancesPage extends StatefulWidget {
@@ -22,20 +21,18 @@ class _FinancesPageState extends State<FinancesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: DoxAppBar(
-        //TODO: check if should be i18n
         title: "Financeiro",
         onBackTap: () {
-          //TODO: ex: pop page here, check if can pop or call controller
+          Navigator.pop(context);
         },
       ),
       body: DoxBackground(
           child:
-              //TODO: make it more granular
-              Padding(
-        padding: const EdgeInsets.only(top: 21.0),
-        child: Stack(
-          children: [
-            DoxBodyCard(
+              Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 21.0),
+            child: DoxBodyCard(
               child: Builder(builder: (context) {
                 if (_currentIndex == 0) {
                   return const FinancesReceivedView();
@@ -46,17 +43,17 @@ class _FinancesPageState extends State<FinancesPage> {
                 }
               }),
             ),
-            Align(
-              alignment: Alignment.topCenter,
-              child: FinancesTabs(
-                currentIndex: _currentIndex,
-                onTabTap: (index) => setState(() {
-                  _currentIndex = index;
-                }),
-              ),
+          ),
+          Align(
+            alignment: Alignment.topCenter,
+            child: FinancesTabs(
+              currentIndex: _currentIndex,
+              onTabTap: (index) => setState(() {
+                _currentIndex = index;
+              }),
             ),
-          ],
-        ),
+          ),
+        ],
       )),
     );
   }
@@ -81,7 +78,6 @@ class SortIcon extends DoxIconButton {
 class LeftArrowIcon extends DoxIconButton {
   const LeftArrowIcon({
     required super.color,
-    super.onTap,
     super.key,
   });
 

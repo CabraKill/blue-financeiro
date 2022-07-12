@@ -1,13 +1,14 @@
-import 'package:dox_financeiro/presentation/widgets/theme/colors.dart';
 import 'package:dox_financeiro/presentation/widgets/theme/typograph.dart';
 import 'package:flutter/material.dart';
 
 class SolidButton extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
+  final Color color;
   const SolidButton({
     required this.text,
     required this.onTap,
+    required this.color,
     Key? key,
   }) : super(key: key);
 
@@ -20,7 +21,7 @@ class SolidButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          color: DoxColors.primary,
+          color: color,
           borderRadius: BorderRadius.circular(_buttonRadius),
         ),
         width: double.infinity,

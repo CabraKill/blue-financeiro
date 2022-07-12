@@ -1,0 +1,4 @@
+enum DocumentFileTypeEnum{
+  googleDocs,
+  gooogleDrive,
+}

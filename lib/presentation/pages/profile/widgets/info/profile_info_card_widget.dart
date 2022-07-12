@@ -1,5 +1,5 @@
 import 'package:dox_financeiro/domain/entities/finances/profile_info_entity.dart';
-import 'package:dox_financeiro/presentation/pages/profile/widgets/profile_info_texts_widget.dart';
+import 'package:dox_financeiro/presentation/pages/profile/widgets/info/profile_info_texts_widget.dart';
 import 'package:dox_financeiro/presentation/widgets/buttons/solid_button_widget.dart';
 import 'package:dox_financeiro/presentation/widgets/photo/rounded_photo_widget.dart';
 import 'package:dox_financeiro/presentation/widgets/theme/colors.dart';
@@ -51,6 +51,7 @@ class ProfileInfoCard extends StatelessWidget {
           const SizedBox(height: 10),
           SolidButton(
             text: "Editar",
+            color: DoxColors.primary,
             onTap: () {
               //TODO: call controller here
             },
