@@ -4,7 +4,7 @@ Dox app com páginas de financeiro e perfil.
 ## Pages
 Perfil                     |Financeiro
 :-------------------------:|:-----------------------------:
-![](./README/perfil.png) |![](./README/perfil2.png)
+![](./README/perfil.png) |![](./README/perfil22.png)
 
 Financeiro                    |Financeiro2                    |Financeiro3
 :----------------------------:|:-----------------------------:|:-----------------------------:
