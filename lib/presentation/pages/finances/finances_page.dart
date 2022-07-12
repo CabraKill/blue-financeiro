@@ -27,21 +27,23 @@ class _FinancesPageState extends State<FinancesPage> {
         },
       ),
       body: DoxBackground(
-          child:
-              Stack(
+          child: Stack(
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 21.0),
             child: DoxBodyCard(
-              child: Builder(builder: (context) {
-                if (_currentIndex == 0) {
-                  return const FinancesReceivedView();
-                } else if (_currentIndex == 1) {
-                  return const FinancesToReceiveView();
-                } else {
-                  return const FinancesLateView();
-                }
-              }),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 32.0),
+                child: Builder(builder: (context) {
+                  if (_currentIndex == 0) {
+                    return const FinancesReceivedView();
+                  } else if (_currentIndex == 1) {
+                    return const FinancesToReceiveView();
+                  } else {
+                    return const FinancesLateView();
+                  }
+                }),
+              ),
             ),
           ),
           Align(

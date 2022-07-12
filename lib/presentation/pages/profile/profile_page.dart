@@ -27,18 +27,18 @@ class _ProfilePageState extends State<ProfilePage> {
         title: "Meu Perfil",
       ),
       body: DoxBackground(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 6.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const ProfileTabs(),
-                DoxBodyCard(
-                    backgroundColor: DoxColors.notW,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const ProfileTabs(),
+            Expanded(
+              child: DoxBodyCard(
+                  backgroundColor: DoxColors.notW,
+                  child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
+                        const SizedBox(height: 6),
                         ProfileInfoCard(
                           profileInfo: ProfileInfoCardMock.card,
                         ),
@@ -61,10 +61,10 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                         const SizedBox(height: 1.0),
                       ],
-                    )),
-              ],
+                    ),
+                  )),
             ),
-          ),
+          ],
         ),
       ),
     );

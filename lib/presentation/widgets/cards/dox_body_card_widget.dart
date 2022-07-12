@@ -25,7 +25,6 @@ class DoxBodyCard extends StatelessWidget {
         //TODO: maybe the padding has a pattern?
         left: 24,
         right: 24,
-        top: 32,
       ),
       child: child,
     );
