@@ -36,6 +36,7 @@ class ProfileDocumentsItemInfo extends StatelessWidget {
                 document.title,
               ),
             ),
+            const SizedBox(height: 6),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
