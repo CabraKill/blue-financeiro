@@ -2,6 +2,7 @@ import 'package:dox_financeiro/presentation/widgets/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class DoxTypograph {
+  DoxTypograph._();
   static TextStyle get appBarTitle => const TextStyle(
         fontFamily: 'Montserrat',
         fontSize: 17,
@@ -80,6 +81,30 @@ class DoxTypograph {
   static TextStyle get tabTitleCard => const TextStyle(
         fontFamily: 'Montserrat',
         fontSize: 10,
+        fontWeight: FontWeight.w600,
+      );
+
+  static TextStyle get profileInfoName => const TextStyle(
+        fontFamily: 'Roboto',
+        fontSize: 20,
+        fontWeight: FontWeight.w700,
+      );
+
+  static TextStyle get profileInfo => const TextStyle(
+        fontFamily: 'Montserrat',
+        fontSize: 12,
+        fontWeight: FontWeight.w500,
+      );
+  
+  static TextStyle get buttonText => const TextStyle(
+        fontFamily: 'Montserrat',
+        fontSize: 15,
+        fontWeight: FontWeight.w500,
+      );
+
+  static TextStyle get profileSectionHeader => const TextStyle(
+        fontFamily: 'Montserrat',
+        fontSize: 15,
         fontWeight: FontWeight.w600,
       );
 }

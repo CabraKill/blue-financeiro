@@ -9,38 +9,44 @@ class ProfileTabs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        DoxTabCard(
-          title: 'Financeiro',
-          icon: SvgPicture.asset(
-            DoxIconAssets.moneySimbol,
-            color: DoxColors.tertiary,
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        vertical: 4,
+        horizontal: 2,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          DoxTabCard(
+            title: 'Financeiro',
+            icon: SvgPicture.asset(
+              DoxIconAssets.moneySimbol,
+              color: DoxColors.tertiary,
+            ),
           ),
-        ),
-        DoxTabCard(
-          title: 'Estatísticas',
-          icon: SvgPicture.asset(
-            DoxIconAssets.chart,
-            color: DoxColors.tertiary,
+          DoxTabCard(
+            title: 'Estatísticas',
+            icon: SvgPicture.asset(
+              DoxIconAssets.chart,
+              color: DoxColors.tertiary,
+            ),
           ),
-        ),
-        DoxTabCard(
-          title: 'Indicações',
-          icon: SvgPicture.asset(
-            DoxIconAssets.flag,
-            color: DoxColors.tertiary,
+          DoxTabCard(
+            title: 'Indicações',
+            icon: SvgPicture.asset(
+              DoxIconAssets.flag,
+              color: DoxColors.tertiary,
+            ),
           ),
-        ),
-        DoxTabCard(
-          title: 'Plantões',
-          icon: SvgPicture.asset(
-            DoxIconAssets.bookMark,
-            color: DoxColors.tertiary,
+          DoxTabCard(
+            title: 'Plantões',
+            icon: SvgPicture.asset(
+              DoxIconAssets.bookMark,
+              color: DoxColors.tertiary,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

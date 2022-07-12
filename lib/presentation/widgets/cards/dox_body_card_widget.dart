@@ -3,20 +3,22 @@ import 'package:flutter/material.dart';
 
 class DoxBodyCard extends StatelessWidget {
   final Widget child;
+  final Color backgroundColor;
   const DoxBodyCard({
     required this.child,
+    this.backgroundColor = DoxColors.notW,
     Key? key,
   }) : super(key: key);
 
+  static const double _externalContainerRadius = 30;
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 21),
-      decoration: const BoxDecoration(
-        color: DoxColors.notW,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
+      decoration: BoxDecoration(
+        color: backgroundColor,
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(_externalContainerRadius),
+          topRight: Radius.circular(_externalContainerRadius),
         ),
       ),
       padding: const EdgeInsets.only(

@@ -1,4 +1,5 @@
 import 'package:dox_financeiro/presentation/widgets/icon_assets.dart';
+import 'package:dox_financeiro/presentation/widgets/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -26,6 +27,7 @@ class RighCircle extends StatelessWidget {
       child: SvgPicture.asset(
         DoxIconAssets.arrowRight,
         height: _iconSize,
+        color: DoxColors.tertiary,
       ),
     );
   }

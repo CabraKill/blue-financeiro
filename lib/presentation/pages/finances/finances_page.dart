@@ -31,29 +31,32 @@ class _FinancesPageState extends State<FinancesPage> {
       body: DoxBackground(
           child:
               //TODO: make it more granular
-              Stack(
-        children: [
-          DoxBodyCard(
-            child: Builder(builder: (context) {
-              if (_currentIndex == 0) {
-                return const FinancesReceivedView();
-              } else if (_currentIndex == 1) {
-                return const FinancesToReceiveView();
-              } else {
-                return const FinancesLateView();
-              }
-            }),
-          ),
-          Align(
-            alignment: Alignment.topCenter,
-            child: FinancesTabs(
-              currentIndex: _currentIndex,
-              onTabTap: (index) => setState(() {
-                _currentIndex = index;
+              Padding(
+        padding: const EdgeInsets.only(top: 21.0),
+        child: Stack(
+          children: [
+            DoxBodyCard(
+              child: Builder(builder: (context) {
+                if (_currentIndex == 0) {
+                  return const FinancesReceivedView();
+                } else if (_currentIndex == 1) {
+                  return const FinancesToReceiveView();
+                } else {
+                  return const FinancesLateView();
+                }
               }),
             ),
-          ),
-        ],
+            Align(
+              alignment: Alignment.topCenter,
+              child: FinancesTabs(
+                currentIndex: _currentIndex,
+                onTabTap: (index) => setState(() {
+                  _currentIndex = index;
+                }),
+              ),
+            ),
+          ],
+        ),
       )),
     );
   }
